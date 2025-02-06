@@ -10,12 +10,10 @@ os.environ["LANGSMITH_API_KEY"] = st_secrets.LANGSMITH_API_KEY
 os.environ["LANGSMITH_PROJECT"] = st_secrets.LANGSMITH_PROJECT
 os.environ["LANGGRAPH_API_URL"] = st_secrets.LANGGRAPH_API_URL
 os.environ["LANGCHAIN_API_KEY"] = st_secrets.LANGCHAIN_API_KEY
-os.environ["LANGCHAIN_TRACING_V2"] = True
-os.environ["LANGSMITH_TRACING"] = True
+os.environ["LANGCHAIN_TRACING_V2"] = "true"
+os.environ["LANGSMITH_TRACING"] = "true"
 os.environ["NORTE_FOLDER_ID"] = st_secrets.NORTE_FOLDER_ID
 os.environ["ATTIO_API_KEY"] = st_secrets.ATTIO_API_KEY
-
-
 
 
 from langgraph.prebuilt import create_react_agent
