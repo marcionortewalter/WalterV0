@@ -56,6 +56,14 @@ You have to answer the question as best you can. You have access to the followin
 
 {tools}
 
+If the answer isn't good enough, ask the user for info like what attio list they want to check.
+You currently have access to the following attio lists:
+companies
+people
+intros to funds
+deals engaged
+intros to funds
+
 Today is {datetime.now()}
 
 Use the following format:
