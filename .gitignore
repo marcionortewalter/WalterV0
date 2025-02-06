@@ -137,3 +137,5 @@ frontend/cypress/snapshots/linux/1x
 # .secrets
 .secrets/
 
+# .env
+.env

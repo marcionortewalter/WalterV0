@@ -1,3 +1,23 @@
+import os
+from streamlit import secrets as st_secrets
+os.environ["OPENAI_API_KEY"] = st_secrets.OPENAI_API_KEY
+os.environ["ANTHROPIC_API_KEY"] = st_secrets.ANTHROPIC_API_KEY
+os.environ["TAVILY_API_KEY"] = st_secrets.TAVILY_API_KEY
+os.environ["SUPABASE_PASSWORD"] = st_secrets.SUPABASE_PASSWORD
+os.environ["SUPABASE_URL"] = st_secrets.SUPABASE_URL
+os.environ["SUPABASE_KEY"] = st_secrets.SUPABASE_KEY
+os.environ["LANGSMITH_API_KEY"] = st_secrets.LANGSMITH_API_KEY
+os.environ["LANGSMITH_PROJECT"] = st_secrets.LANGSMITH_PROJECT
+os.environ["LANGGRAPH_API_URL"] = st_secrets.LANGGRAPH_API_URL
+os.environ["LANGCHAIN_API_KEY"] = st_secrets.LANGCHAIN_API_KEY
+os.environ["LANGCHAIN_TRACING_V2"] = True
+os.environ["LANGSMITH_TRACING"] = True
+os.environ["NORTE_FOLDER_ID"] = st_secrets.NORTE_FOLDER_ID
+os.environ["ATTIO_API_KEY"] = st_secrets.ATTIO_API_KEY
+
+
+
+
 from langgraph.prebuilt import create_react_agent
 from langchain_core.prompts import PromptTemplate
 from langchain_core.callbacks import StreamingStdOutCallbackHandler
