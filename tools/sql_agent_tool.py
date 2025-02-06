@@ -93,7 +93,8 @@ def internal_sql_query(input: str):
     Use esta ferramenta quando precisar consultar o banco de dados.
     O agente recebe uma pergunta e retorna sua análise a partir dessa pergunta ao fazer
     consultas ao banco de dados. Ao pedir dados de uma pessoa, empresa ou membro, sempre dê o maximo de informações possíveis.
-
+    Para perguntas qualitativas, é útil usar também o retriever
+    
     Args:
         input (str): A pergunta a ser analisada.
 
