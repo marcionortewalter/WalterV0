@@ -38,12 +38,12 @@ checkpoint = MemorySaver()
 config = {"configurable": {"thread_id": "test-thread"}}
 
 tools = [
-    create_email_draft_tool,
-    send_email_to_address_tool,
+    # create_email_draft_tool,
+    # send_email_to_address_tool,
     internal_retriever,
     internal_sql_query,
-    send_calendar_invite_tool,
-    get_events_for_days_tool,
+    # send_calendar_invite_tool,
+    # get_events_for_days_tool,
     create_new_attio_task_tool
 ]
 

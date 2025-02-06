@@ -68,6 +68,7 @@ st.markdown("""
 # Cabeçalho
 st.markdown('<div class="header"><h1 class="title">🧙‍♂️ Walter</h1></div>', unsafe_allow_html=True)
 st.markdown("<div style='font-size: 10px;'>Walter é um assistente virtual em desenvolvimento. Suas informações podem estar desatualizadas.</div>", unsafe_allow_html=True)
+st.markdown("<div style='font-size: 10px;'>Ele pode acessar documentos internos, fazer consultas em algumas tabelas do attio (dados de 21/01)e criar novas tasks no attio. Outras features estão em desenvolvimento, bem como a atualização de texto incremental.</div>", unsafe_allow_html=True)
 
 # Verificação de login antes de mostrar o chat
 if not st.session_state.user:
@@ -140,11 +141,14 @@ if st.session_state.user:
                                     tool_args = json.dumps(message.tool_calls[0]["args"], indent=2, ensure_ascii=False)
                                     message_placeholder.markdown(f"🔧 Consultando: {tool_name}")
                                 else:
-                                    # Atualizar resposta
-                                    full_response = message.content
-                                    if len(full_response) > 10000:
-                                        full_response = full_response[:10000] + " ... (truncated)"
-                                    message_placeholder.markdown(full_response)
+                                    # Atualizar resposta de forma incremental
+                                    if hasattr(message, 'content'):
+                                        new_content = message.content
+                                        if new_content != full_response:  # Apenas atualiza se houver mudança
+                                            full_response = new_content
+                                            if len(full_response) > 10000:
+                                                full_response = full_response[:10000] + " ... (truncated)"
+                                            message_placeholder.markdown(full_response + "|")
                         
                         except Exception as e:
                             message_placeholder.markdown("Opa, parece que os servidores estão ocupados.")

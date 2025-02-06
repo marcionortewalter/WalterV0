@@ -38,6 +38,7 @@ def internal_retriever(input: str):
     Retriever: Configured retriever for document search. 
     This tool can be used to search for information in the company's meeting notes, investment memos, and other documents.
     This can be used as a last resort to answer questions.
+    At least once, quote the documents you find and display the metadata in bullet points, especially with the url available.
 
     Args:
         input (str): The query to search for
