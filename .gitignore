@@ -82,8 +82,8 @@ coverage/
 ########################################################################
 # Streamlit
 ########################################################################
-.streamlit/
-!e2e_playwright/.streamlit/
+.streamlit/secrets.toml
+!e2e_playwright/.streamlit/secrets.toml
 lib/streamlit/static
 streamlit-storage
 
